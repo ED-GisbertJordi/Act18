@@ -37,8 +37,8 @@ public class Jugador {
     private Coordenada recogerCoordenada(Tablero tablero){
         final int DIMENSIONES = tablero.getDimensiones();
         do {
-            int fila = pedirInt("Introduce Fila [1-"+DIMENSIONES+"]:","¡Error! Debe introducir un número entero");
-            int columna = pedirInt("Introduce Columna [1-"+DIMENSIONES+"]:","¡Error! Debe introducir un número entero");
+            int fila = pedirInt("Introduce Fila [1-"+DIMENSIONES+"]: ","¡Error! Debe introducir un número entero");
+            int columna = pedirInt("Introduce Columna [1-"+DIMENSIONES+"]: ","¡Error! Debe introducir un número entero");
             Coordenada co = new Coordenada(fila, columna);
             if (co.isValida(DIMENSIONES))   return new Coordenada(fila, columna);
             System.out.println("¡Error! Introduce una coordenada válida");

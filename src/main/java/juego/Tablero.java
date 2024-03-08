@@ -9,12 +9,12 @@ package juego;
  * @author Jordi Gisbert Ferriz
  */
 public class Tablero {
-    private final int DIMENSIONES = 3; 
+    private final int DIMENSIONES = 5; 
     private Ficha[][] casillas = new Ficha[DIMENSIONES][DIMENSIONES];
 
     
     public Tablero() {
-        vaciar();
+        this.vaciar();
     }
     
     public int getDimensiones(){

@@ -43,8 +43,8 @@ public class TresEnRaya {
     }
     
      private void jugar(){
-        this.jugadores[0] = new Jugador(Ficha.circulo);
-        this.jugadores[1] = new Jugador(Ficha.equis);
+        this.jugadores[0] = new Jugador(Ficha.equis);
+        this.jugadores[1] = new Jugador(Ficha.circulo);
         this.tablero.vaciar();
         
         System.out.println("Vamos a jugar al Tres en Raya\n");
