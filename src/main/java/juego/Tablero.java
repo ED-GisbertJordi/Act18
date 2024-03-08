@@ -17,6 +17,11 @@ public class Tablero {
         vaciar();
     }
     
+    public int getDimensiones(){
+        return this.DIMENSIONES;
+    }
+    
+    
     public boolean estaLleno(){
         int contador = 0;
         for (Ficha[] casilla : this.casillas) {

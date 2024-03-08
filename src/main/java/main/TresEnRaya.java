@@ -15,7 +15,7 @@ import juego.Tablero;
  */
 public class TresEnRaya {
     
-    private static Scanner teclado;
+    public static Scanner teclado;
     
     
     public static void main(String[] args) {
