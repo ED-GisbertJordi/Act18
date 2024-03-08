@@ -9,9 +9,11 @@ package juego;
  * @author Jordi Gisbert Ferriz
  */
 public class Jugador {
-    private Ficha[] ficha;
+    private Ficha ficha;
     
-    public Jugador(){
-        this.ficha = new Ficha[5];
+    public Jugador(Ficha valor){
+        this.ficha = valor;
     }
+    
+    
 }

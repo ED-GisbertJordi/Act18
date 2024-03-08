@@ -26,7 +26,7 @@ public class Coordenada {
         return this.columna;
     }
 
-    public boolean isValida(){
-        return (this.fila <= 0 && this.fila >=3 && this.columna<= 0 && this.columna >=3);
+    public boolean isValida(int dimensiones){
+        return (this.fila > 0 && this.fila <= dimensiones && this.columna > 0 && this.columna <= dimensiones);
     }
 }

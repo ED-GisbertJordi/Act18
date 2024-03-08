@@ -8,16 +8,24 @@ package juego;
  *
  * @author Jordi Gisbert Ferriz
  */
-public class Ficha {
-    private ValorFicha valor;
-    private Coordenada coordenada;
+public enum  Ficha {
     
-    public Ficha(ValorFicha valor){
-        this.valor = valor;
-    }
-    
-    public Ficha(ValorFicha valor, Coordenada coordenada){
-        this.valor = valor;
-        this.coordenada = coordenada;
+    vacia{
+        @Override
+        public String toString() {
+            return " ";
+        }
+    },
+    equis{
+        @Override
+        public String toString() {
+            return "X";
+        }
+    },
+    circulo {
+        @Override
+        public String toString() {
+            return "O";
+        }
     }
 }
