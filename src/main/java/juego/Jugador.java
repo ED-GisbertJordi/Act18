@@ -25,7 +25,7 @@ public class Jugador {
         do {
             System.out.println("Jugador con "+this.ficha);
             Coordenada coordenada = recogerCoordenada(tablero);
-            if (tablero.isOcupada(coordenada)) {
+            if (!tablero.isOcupada(coordenada)) {
                 tablero.ponerFicha(coordenada, this.ficha);
                 break;
             }else{

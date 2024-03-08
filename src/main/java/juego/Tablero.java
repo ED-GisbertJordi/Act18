@@ -26,10 +26,10 @@ public class Tablero {
         int contador = 0;
         for (Ficha[] casilla : this.casillas) {
             for (Ficha casilla1 : casilla) {
-                if (casilla1 != Ficha.vacia)    contador++;
+                if (!casilla1.equals(Ficha.vacia))    contador++;
             }
         }
-        return contador==this.DIMENSIONES;
+        return contador==this.DIMENSIONES*this.DIMENSIONES;
     }
     
     public void vaciar(){
@@ -45,7 +45,7 @@ public class Tablero {
     }
     
     public boolean isOcupada(Coordenada coordenada){
-        return (this.casillas[coordenada.getFila()][coordenada.getColumna()]!=Ficha.vacia);
+        return (!this.casillas[coordenada.getFila()-1][coordenada.getColumna()-1].equals(Ficha.vacia));
     }
     
     
