@@ -31,8 +31,6 @@ public class TresEnRaya {
         TresEnRaya tresEnRaya = new TresEnRaya();
         boolean seguir = true;
         
-        Simbolos s = new Simbolos();
-        s.seleccionar();
         do {
             tresEnRaya.jugar();
             do {
@@ -47,18 +45,21 @@ public class TresEnRaya {
     }
     
      private void jugar(){
-        this.jugadores[0] = new Jugador(Ficha.equis);
-        this.jugadores[1] = new Jugador(Ficha.circulo);
+        Simbolos s = new Simbolos();
+        s.seleccionar();
+         
+        this.jugadores[0] = new Jugador(Ficha.equis, s);
+        this.jugadores[1] = new Jugador(Ficha.circulo,s);
         this.tablero.vaciar();
         
         System.out.println("Vamos a jugar al Tres en Raya\n");
-        this.tablero.mostrar();
+        this.tablero.mostrar(s);
         System.out.println("");
         boolean finPartida = false;
         do {
             for (Jugador jugador : this.jugadores) {
                 jugador.ponerFicha(this.tablero);
-                this.tablero.mostrar();
+                this.tablero.mostrar(s);
                 if (this.tablero.hayTresEnRaya()){
                     System.out.println("");
                     jugador.cantarVictoria();

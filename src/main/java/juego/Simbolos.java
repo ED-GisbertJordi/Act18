@@ -20,7 +20,7 @@ public class Simbolos {
     }
     
     public char obtenerSimbolo(Ficha ficha){
-        return (ficha.equals(Ficha.equis))? packs[this.seleccionado][0] : packs[this.seleccionado][1];
+        return (ficha.equals(Ficha.equis))? packs[this.seleccionado-1][0] : packs[this.seleccionado-1][1];
     }
     
     public void seleccionar(){
@@ -36,6 +36,7 @@ public class Simbolos {
             int op = pedirInt("Selecciona una opción [1-"+(packs.length+1)+"]: ", "Debe introducir un entero.");
             if (enRango(op, 1, packs.length+1)) {
                 this.seleccionado = op;
+                break;
             }else{
                 System.out.println("Debe introducir un valor dentro del rango establecido.");
             }
