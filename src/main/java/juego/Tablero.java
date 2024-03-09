@@ -9,7 +9,7 @@ package juego;
  * @author Jordi Gisbert Ferriz
  */
 public class Tablero {
-    private final int DIMENSIONES = 5; 
+    private final int DIMENSIONES = 3; 
     private Ficha[][] casillas = new Ficha[DIMENSIONES][DIMENSIONES];
 
     
@@ -39,7 +39,7 @@ public class Tablero {
             }
         }
     }
-    
+
     public void ponerFicha(Coordenada coordenada, Ficha ficha){
         this.casillas[coordenada.getFila()-1][coordenada.getColumna()-1] = ficha;
     }
@@ -91,11 +91,7 @@ public class Tablero {
         return coincidencias == this.DIMENSIONES;
     }
     
-    
-    
-    
-    
-    public void mostrar(){
+    public void mostrar(Simbolos s){
         System.out.print(" _|");
         for (int i = 1; i <= this.casillas.length; i++) {
             System.out.print(i+"|");
@@ -103,7 +99,7 @@ public class Tablero {
         for (int y = 0; y < this.casillas.length; y++) {
             System.out.print("\n|"+(y+1)+"|");
             for (Ficha casilla : this.casillas[y]) {
-                System.out.print(casilla + "|");
+                System.out.print((casilla.equals(Ficha.vacia))? " |" :s.obtenerSimbolo(casilla)+ "|");
             }
         }
         System.out.println("");

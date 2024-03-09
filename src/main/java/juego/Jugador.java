@@ -12,18 +12,20 @@ import main.TresEnRaya;
  */
 public class Jugador {
     private Ficha ficha;
+    private Simbolos simbolo;
     
-    public Jugador(Ficha valor){
+    public Jugador(Ficha valor, Simbolos simbolo){
         this.ficha = valor;
+        this.simbolo = simbolo;
     }
     
     public void cantarVictoria() {
-        System.out.println("¡El jugador "+this.ficha+" es el ganador!");
+        System.out.println("¡El jugador "+simbolo.obtenerSimbolo(this.ficha)+" es el ganador!");
     }
     
     public void ponerFicha(Tablero tablero) {
         do {
-            System.out.println("Jugador con "+this.ficha);
+            System.out.println("Jugador con "+simbolo.obtenerSimbolo(this.ficha));
             Coordenada coordenada = recogerCoordenada(tablero);
             if (!tablero.isOcupada(coordenada)) {
                 tablero.ponerFicha(coordenada, this.ficha);
