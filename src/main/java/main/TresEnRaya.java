@@ -8,6 +8,7 @@ import java.util.Scanner;
 import juego.Coordenada;
 import juego.Ficha;
 import juego.Jugador;
+import juego.Simbolos;
 import juego.Tablero;
 
 /**
@@ -29,6 +30,9 @@ public class TresEnRaya {
         teclado = new Scanner(System.in);
         TresEnRaya tresEnRaya = new TresEnRaya();
         boolean seguir = true;
+        
+        Simbolos s = new Simbolos();
+        s.seleccionar();
         do {
             tresEnRaya.jugar();
             do {
