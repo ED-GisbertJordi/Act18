@@ -9,16 +9,15 @@ package juego;
  * @author Jordi Gisbert Ferriz
  */
 public class Tablero {
-    private final int DIMENSIONES = 3; 
+    public  static final int DIMENSIONES = 3; 
     private Ficha[][] casillas = new Ficha[DIMENSIONES][DIMENSIONES];
 
-    
     public Tablero() {
         this.vaciar();
     }
     
     public int getDimensiones(){
-        return this.DIMENSIONES;
+        return DIMENSIONES;
     }
     
     
@@ -29,7 +28,7 @@ public class Tablero {
                 if (!casilla1.equals(Ficha.vacia))    contador++;
             }
         }
-        return contador==this.DIMENSIONES*this.DIMENSIONES;
+        return contador==DIMENSIONES*DIMENSIONES;
     }
     
     public void vaciar(){
@@ -60,35 +59,35 @@ public class Tablero {
             for (Ficha casilla : fila) {
                 if (casilla.equals(ficha))  coincidencias++;
             }
-            if (coincidencias==this.DIMENSIONES) return true;
+            if (coincidencias==DIMENSIONES) return true;
         }
         
         /* Columnas //////////////////////////////////////////////////////////////////////////////////////////*/
-        for (int x = 0; x < this.DIMENSIONES; x++) {
+        for (int x = 0; x < DIMENSIONES; x++) {
             int coincidencias = 0;
-            for (int y = 0; y < this.DIMENSIONES; y++) {
+            for (int y = 0; y < DIMENSIONES; y++) {
                 if (this.casillas[y][x].equals(ficha)) {
                     coincidencias++;
                 }
             }
-            if (coincidencias == this.DIMENSIONES)   return true;
+            if (coincidencias == DIMENSIONES)   return true;
         }
         
         /* Diagonal Normal ////////////////////////////////////////////////////////////////////////////////*/
         int coincidencias = 0;
-        for (int i = 0; i < this.DIMENSIONES; i++) {
+        for (int i = 0; i < DIMENSIONES; i++) {
             if (this.casillas[i][i].equals(ficha))  coincidencias++;
         }
-        if (coincidencias == this.DIMENSIONES)   return true;
+        if (coincidencias == DIMENSIONES)   return true;
         
         /* Diagonal Invertida /////////////////////////////////////////////////////////////////////////////*/
         coincidencias = 0;
-        int x = this.DIMENSIONES-1;
-        for (int y = 0; y < this.DIMENSIONES; y++) {
+        int x = DIMENSIONES-1;
+        for (int y = 0; y < DIMENSIONES; y++) {
             if (this.casillas[y][x].equals(ficha))  coincidencias++;
             x--;
         }
-        return coincidencias == this.DIMENSIONES;
+        return coincidencias == DIMENSIONES;
     }
     
     public void mostrar(Simbolos s){
