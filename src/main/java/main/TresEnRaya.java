@@ -5,7 +5,6 @@
 package main;
 
 import java.util.Scanner;
-import juego.Coordenada;
 import juego.Ficha;
 import juego.Jugador;
 import juego.Simbolos;
