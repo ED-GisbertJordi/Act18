@@ -26,7 +26,7 @@ public class Jugador {
     public void ponerFicha(Tablero tablero) {
         do {
             System.out.println("Jugador con "+simbolo.obtenerSimbolo(this.ficha));
-            Coordenada coordenada = recogerCoordenada(tablero);
+            Coordenada coordenada = recogerCoordenada();
             if (!tablero.isOcupada(coordenada)) {
                 tablero.ponerFicha(coordenada, this.ficha);
                 break;
@@ -36,8 +36,8 @@ public class Jugador {
         } while (true);
     }
     
-    private Coordenada recogerCoordenada(Tablero tablero){
-        final int DIMENSIONES = tablero.getDimensiones();
+    private Coordenada recogerCoordenada(){
+        final int DIMENSIONES = Tablero.DIMENSIONES;
         do {
             int fila = pedirInt("Introduce Fila [1-"+DIMENSIONES+"]: ","¡Error! Debe introducir un número entero");
             int columna = pedirInt("Introduce Columna [1-"+DIMENSIONES+"]: ","¡Error! Debe introducir un número entero");
